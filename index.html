@@ -47,17 +47,16 @@
 
 <script>
   document.querySelector('.transparent-button').addEventListener('click', function() {
-    // 버튼 클릭 시 비밀번호 확인 및 새로운 페이지 열기 동작 수행
     var password = document.querySelector('.password-input').value; // 입력된 비밀번호 가져오기
-    var correctPassword = "BL123"; // 올바른 비밀번호 설정 (본인이 사용할 비밀번호로 대체)
+    var correctPassword = "BL123"; // 올바른 비밀번호 설정
     
     if (password === correctPassword) {
-      // 비밀번호가 올바른 경우, 새로운 페이지를 열거나 다른 동작 수행
-      window.location.href = "https://slashpage.com/%EC%9D%B4%EC%9E%91%EA%B0%80%EC%8B%B8%EC%9D%B4%EC%9B%94%EB%93%9C"; // 새로운 페이지로 이동하는 예시
+      // URL을 인코딩하여 사용
+      var encodedUrl = encodeURI("https://slashpage.com/이작가싸이월드");
+      window.location.href = encodedUrl;
     } else {
-      // 비밀번호가 올바르지 않은 경우, 사용자에게 알림을 표시하거나 다른 동작 수행
-      alert("아이디 또는 비밀번호를 잘못 입력했습니다.
-입력하신 내용을 다시 확인해 주세요.");
+      // 비밀번호가 올바르지 않은 경우, 사용자에게 알림
+      alert("아이디 또는 비밀번호를 잘못 입력했습니다. 입력하신 내용을 다시 확인해 주세요.");
     }
   });
 </script>
